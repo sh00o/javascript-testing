@@ -1,17 +1,64 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>JavaScript Test</title>
+  <meta charset="UTF-8">
+  <title>Font Switcher</title>
+
+  <!-- load the font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background: #111;
+      color: white;
+      font-family: serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      gap: 20px;
+    }
+
+    #text {
+      font-size: 32px;
+      transition: 0.3s ease;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      background: #333;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      background: #444;
+    }
+
+    /* class for the montserrat font */
+    .mont {
+      font-family: 'Montserrat Alternates', sans-serif;
+    }
+  </style>
 </head>
+
 <body>
 
-  <h1 id="title">Hello World</h1>
-  <button onclick="changeText()">Click Me</button>
+  <p id="text">this is normal text</p>
+  <button id="btn">change font</button>
 
   <script>
-    function changeText() {
-      document.getElementById("title").innerText = "You clicked the button!";
-    }
+    const text = document.getElementById("text");
+    const btn = document.getElementById("btn");
+
+    btn.onclick = () => {
+      text.classList.toggle("mont");
+    };
   </script>
 
 </body>
