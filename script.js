@@ -1,15 +1,6 @@
-<!DOCTYPE html>
-<html>
-<body>
+const text = document.getElementById("text");
+const btn = document.getElementById("btn");
 
-  <p id="text">Watch my color change!</p>
-  <button onclick="changeColor()">Change Color</button>
-
-  <script>
-    function changeColor() {
-      document.getElementById("text").style.color = "red";
-    }
-  </script>
-
-</body>
-</html>
+btn.onclick = () => {
+  text.classList.toggle("mont");
+};
